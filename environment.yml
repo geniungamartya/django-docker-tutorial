@@ -1,0 +1,6 @@
+name: python39-poetry-env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - poetry

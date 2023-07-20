@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "learn-django-first"
+version = "0.1.0"
+description = ""
+authors = ["geniungamartya <geniungamartya@gmail.com>"]
+readme = "README.md"
+packages = [{include = "learn_django_first"}]
+
+[tool.poetry.dependencies]
+python = "3.9.17"
+Django = "^4.2.3"
+psycopg = "^3.1.9"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.24.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
