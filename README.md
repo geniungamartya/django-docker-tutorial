@@ -71,3 +71,29 @@ To run program:
 ```
 python manage.py runserver
 ```
+
+## How to start Python interactive shell
+
+To start a new Python interactive shell:
+```
+python manage.py shell 
+```
+
+## How to create an admin user
+
+To create an admin user:
+
+```
+> python manage.py createsuperuser
+
+> Username: admin
+
+> Email address: admin@example.com
+
+> Password: **********
+  Password (again): *********
+```
+
+## Views on Django
+
+A view is a “type” of web page in your Django application that generally serves a specific function and has a specific template.
