@@ -2,23 +2,41 @@
 
 ## How to Install Dependencies
 
-1. Create conda environment:
+We can install dependencies using conda or build docker
+
+- Using Conda
+
+    1. Create conda environment:
+
+        ```
+        conda env create -f environment.yml
+        conda activate python39-poetry-env
+        ```
+
+    2. Create python environment:
+
+        ```
+        python -m venv .venv
+        .venv/Scripts/Activate.ps1
+        ```
+
+    3. Install Depencies using Poetry
+        ```
+        poetry install
+        ```
+
+- Using docker
+
+    1. Buld Docker
+    
+    ```
+    docker build --tag learn-django-docker .
+    ```
+
+    2. Run Docker
 
     ```
-    conda env create -f environment.yml
-    conda activate python39-poetry-env
-    ```
-
-2. Create python environment:
-
-    ```
-    python -m venv venv
-    venv/Scripts/Activate.ps1
-    ```
-
-2. Install Depencies using Poetry
-    ```
-    poetry install
+    docker run --publish 8000:8000 learn-django-docker
     ```
 
 # Create a project
