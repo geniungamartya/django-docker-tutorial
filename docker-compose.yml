@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 0.0.0.0:8000:8000
+
+  postgres:
+    image: postgres:15.3
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - learn-django-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: geniunG
+      POSTGRES_DB: learn-django-db
+
+volumes:
+  learn-django-db:

@@ -27,17 +27,36 @@ We can install dependencies using conda or build docker
 
 - Using docker
 
-    1. Buld Docker
+    1. Dev
     
-    ```
-    docker build --tag learn-django-docker .
-    ```
+        Using Docker Compose
 
-    2. Run Docker
+        ```
+        docker compose -f docker-compose.dev.yml up -d
+        ``` 
+    
+    2. Production
 
-    ```
-    docker run --publish 8000:8000 learn-django-docker
-    ```
+        - Using Docker Image
+            1. Buld Docker Image
+        
+            ```
+            docker build --tag learn-django-docker .
+            ```
+
+            2. Run Docker Container
+
+            ```
+            docker run --rm --detach --publish 0.0.0.0:8000:8000 --name learn-django-server learn-django-docker
+            ```
+
+        - Using Docker Compose
+
+            Run Docker Compose:
+
+            ```
+            docker compose -f docker-compose.yml up -d --build
+            ``` 
 
 # Create a project
 

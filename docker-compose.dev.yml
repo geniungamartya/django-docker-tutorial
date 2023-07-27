@@ -1,0 +1,31 @@
+services:
+  app:
+    image: python:3.9.17
+    working_dir: /app    
+    command: |-
+      bash -c
+      "echo "1" &&
+      pip install poetry && 
+      echo "3" &&
+      poetry config virtualenvs.create false && 
+      poetry install --only main --no-root --no-directory && 
+      rm -rf ~/.cache/pypoetry/ && 
+      python manage.py migrate && 
+      python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 127.0.0.1:8000:8000
+    volumes:
+      - ./:/app
+
+  postgres:
+    image: postgres:15.3
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - learn-django-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: geniunG
+      POSTGRES_DB: learn-django-db
+
+volumes:
+  learn-django-db:

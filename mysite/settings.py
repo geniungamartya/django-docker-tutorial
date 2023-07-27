@@ -78,10 +78,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "learn-django-db",
-        "USER": "geni",
+        "USER": "postgres",
         "PASSWORD": "geniunG",
-        "HOST": "127.0.0.1",
-        # "HOST": "host.docker.internal",
+        "HOST": "postgres",
         "PORT": "5432",
     }
 }
